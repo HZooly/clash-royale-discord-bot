@@ -29,8 +29,12 @@ bot.on('message', message => {
                     .then(res => {
                         const data = res.data;
                         const embed = new Discord.RichEmbed()
-                            .setTitle(data.name)
+                            .setTitle("Clan Informations")
                             .setColor("#22A7F0")
+                            .setField(
+                                "Name",
+                                data.name
+                            )
                             .setDescription(data.description)
                             .addField(
                                 "Players",
@@ -50,11 +54,51 @@ bot.on('message', message => {
                             )
                             .setThumbnail(data.badge.image)
 
-                        message.channel.send(
-                            {
-                                embed
-                            }
-                        );
+                        message.channel.send({
+                            embed
+                        });
+                    });
+                break;
+            case 'top5':
+                request.get('http://api.cr-api.com/clan/9PY9VL8J')
+                    .then(res => {
+                        const data = res.data.members;
+                        const embed = new Discord.RichEmbed()
+                            .setTitle("Top Players")
+                            .setDescription("5 High ranked players");
+                        for (let i = 0; i < data.length && i < 5; i++) {
+                            embed.addField(
+                                `${i+1}. ${data[i].name}`,
+                                `🏆 ${data[i].trophies}`
+                            );
+                        }
+                        message.channel.send({
+                            embed
+                        })
+                    });
+                break;
+            case 'donations':
+                request.get('http://api.cr-api.com/clan/9PY9VL8J')
+                    .then(res => {
+                        const data = res.data.members;
+                        const embed = new Discord.RichEmbed()
+                            .setTitle("Top Donations Player")
+                            .setDescription("5 Best Donations Players");
+
+                        data.sort((a, b) => {
+                            return b.donations - a.donations
+                        });
+                        
+                        for (let i = 0; i < data.length && i < 5; i++) {
+                            embed.addField(
+                                `${i+1}. ${data[i].name}`,
+                                `🎁 ${data[i].donations}`
+                            );
+                        }
+
+                        message.channel.send({
+                            embed
+                        })
                     });
                 break;
             default:
