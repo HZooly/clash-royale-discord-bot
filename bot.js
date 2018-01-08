@@ -69,7 +69,7 @@ bot.on('message', message => {
                         for (let i = 0; i < data.length && i < 5; i++) {
                             embed.addField(
                                 `${i+1}. ${data[i].name}`,
-                                `🏆 ${data[i].trophies}`
+                                `\:trophy: ${data[i].trophies}`
                             );
                         }
                         message.channel.send({
@@ -92,7 +92,7 @@ bot.on('message', message => {
                         for (let i = 0; i < data.length && i < 5; i++) {
                             embed.addField(
                                 `${i+1}. ${data[i].name}`,
-                                `🎁 ${data[i].donations}`
+                                `\:gift: ${data[i].donations}`
                             );
                         }
 
