@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TorzuoliH/clash-royale-discord-bot#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "discord.js": "^11.2.1"
   }
 }
