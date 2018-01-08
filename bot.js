@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
 const axios = require('axios');
 const auth = require('./auth.json');
+const informations = require('./informations.json');
 
 const bot = new Discord.Client();
+const clanTag = informations.clanTag;
 
 let request = axios.create({
     headers: {
@@ -25,17 +27,17 @@ bot.on('message', message => {
                 message.channel.send(`Hello <@${message.author.id}>!`);
                 break;
             case 'clan':
-                request.get('http://api.cr-api.com/clan/9PY9VL8J')
+                request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         const data = res.data;
                         const embed = new Discord.RichEmbed()
                             .setTitle("Clan Informations")
+                            .setDescription(data.description)
                             .setColor("#22A7F0")
                             .setField(
                                 "Name",
                                 data.name
                             )
-                            .setDescription(data.description)
                             .addField(
                                 "Players",
                                 `${data.memberCount}/50`
@@ -52,7 +54,7 @@ bot.on('message', message => {
                                 "Required Trophies",
                                 data.requiredScore
                             )
-                            .setThumbnail(data.badge.image)
+                            .setThumbnail(data.badge.image);
 
                         message.channel.send({
                             embed
@@ -60,7 +62,7 @@ bot.on('message', message => {
                     });
                 break;
             case 'top5':
-                request.get('http://api.cr-api.com/clan/9PY9VL8J')
+                request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         const data = res.data.members;
                         const embed = new Discord.RichEmbed()
@@ -78,7 +80,7 @@ bot.on('message', message => {
                     });
                 break;
             case 'donations':
-                request.get('http://api.cr-api.com/clan/9PY9VL8J')
+                request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         const data = res.data.members;
                         const embed = new Discord.RichEmbed()
