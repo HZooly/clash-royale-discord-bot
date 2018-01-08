@@ -2,7 +2,7 @@
   "name": "clash-royale-discord-bot",
   "version": "1.0.0",
   "description": "A Clash Royale Discord Bot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TorzuoliH/clash-royale-discord-bot/issues"
   },
-  "homepage": "https://github.com/TorzuoliH/clash-royale-discord-bot#readme"
+  "homepage": "https://github.com/TorzuoliH/clash-royale-discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
 }
