@@ -30,35 +30,23 @@ bot.on('message', message => {
                 request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         const data = res.data;
-                        const embed = new Discord.RichEmbed()
-                            .setTitle("Clan Informations")
+                        const embed = new Discord.RichEmbed();
+                        embed.setTitle("Clan Informations")
                             .setDescription(data.description)
                             .setColor("#22A7F0")
-                            .setField(
-                                "Name",
-                                data.name
-                            )
-                            .addField(
-                                "Players",
-                                `${data.memberCount}/50`
-                            )
-                            .addField(
-                                "Score",
-                                data.score
-                            )
-                            .addField(
-                                "Donations",
-                                data.donations
-                            )
-                            .addField(
-                                "Required Trophies",
-                                data.requiredScore
-                            )
+                            .addField("Name", data.name)
+                            .addField("Players", `${data.memberCount}/50`)
+                            .addField("Score", data.score)
+                            .addField("Donations", data.donations)
+                            .addField("Required Trophies", data.requiredScore)
                             .setThumbnail(data.badge.image);
 
                         message.channel.send({
                             embed
                         });
+                    })
+                    .catch(err => {
+                        console.log(err)
                     });
                 break;
             case 'top5':
@@ -90,7 +78,7 @@ bot.on('message', message => {
                         data.sort((a, b) => {
                             return b.donations - a.donations
                         });
-                        
+
                         for (let i = 0; i < data.length && i < 5; i++) {
                             embed.addField(
                                 `${i+1}. ${data[i].name}`,
