@@ -1,14 +1,13 @@
 const Discord = require('discord.js');
 const axios = require('axios');
-const auth = require('./auth.json');
-const informations = require('./informations.json');
+const conf = require('./conf.json');
 
 const bot = new Discord.Client();
-const clanTag = informations.clanTag;
+const clanTag = conf.clanTag;
 
 let request = axios.create({
     headers: {
-        'auth': auth.apiKey
+        'auth': conf.apiKey
     }
 });
 
@@ -97,4 +96,4 @@ bot.on('message', message => {
     }
 });
 
-bot.login(auth.token);
+bot.login(conf.token);
