@@ -79,6 +79,27 @@ module.exports = {
         });
     },
 
+    chest: function (data, message, Discord) {
+        const embed = new Discord.RichEmbed();
+        embed.setTitle("Chest informations")
+            .setColor("#22A7F0")
+            .setDescription(`Next chest incoming for ${data.name}`)
+            .addField("Giant", data.chestCycle.giant)
+            .addField("Epic", data.chestCycle.epic)
+            .addField("Magical", data.chestCycle.magical)
+            .addField("Super Magical", data.chestCycle.superMagical)
+            .addField("Legendary", data.chestCycle.legendary)
+            .setThumbnail("http://www.clashapi.xyz/images/chests/super-magical-chest.png");
+
+        return message.channel.send({
+            embed
+        });
+    },
+
+    removeHash: function (arg) {
+        return arg.replace('#', '');
+    },
+
     errorCommand: function (message) {
         return message.channel.send(`<@${message.author.id}>: bad command!`);
     },

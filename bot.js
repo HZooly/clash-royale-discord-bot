@@ -71,10 +71,24 @@ bot.on('message', message => {
                 break;
             case 'player':
                 if(option){
-                    option = option.replace('#','');
+                    option = Utils.removeHash(option);
                     request.get(`http://api.cr-api.com/player/${option}`)
                         .then(res => {
                             Utils.player(res.data, message, Discord);
+                        })
+                        .catch(err => {
+                            Utils.errorOption("Bad player ID", message);
+                        })
+                } else {
+                    Utils.errorOption("You need to specify a player ID", message);
+                }
+                break;
+            case 'chest':
+                if(option){
+                    option = Utils.removeHash(option);
+                    request.get(`http://api.cr-api.com/player/${option}`)
+                        .then(res => {
+                            Utils.chest(res.data, message, Discord);
                         })
                         .catch(err => {
                             Utils.errorOption("Bad player ID", message);
