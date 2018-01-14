@@ -22,7 +22,6 @@ bot.on('message', message => {
         let args = message.content.substring(1).split(' ');
         let instruction = args[0];
 
-        args = args.splice(1);
         switch (instruction) {
             case 'hello':
                 Utils.hello(message);
