@@ -79,7 +79,7 @@ module.exports = {
         });
     },
 
-    chest: function (data, message, Discord) {
+    chest: function (data, message, img, Discord) {
         const embed = new Discord.RichEmbed();
         embed.setTitle("Chest informations")
             .setColor("#22A7F0")
@@ -89,7 +89,7 @@ module.exports = {
             .addField("Magical", data.chestCycle.magical)
             .addField("Super Magical", data.chestCycle.superMagical)
             .addField("Legendary", data.chestCycle.legendary)
-            .setThumbnail("http://www.clashapi.xyz/images/chests/super-magical-chest.png");
+            .setThumbnail(img);
 
         return message.channel.send({
             embed

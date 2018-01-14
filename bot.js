@@ -70,7 +70,7 @@ bot.on('message', message => {
                     });
                 break;
             case 'player':
-                if(option){
+                if (option) {
                     option = Utils.removeHash(option);
                     request.get(`http://api.cr-api.com/player/${option}`)
                         .then(res => {
@@ -84,11 +84,13 @@ bot.on('message', message => {
                 }
                 break;
             case 'chest':
-                if(option){
+                if (option) {
                     option = Utils.removeHash(option);
+                    const chestId = chestIDs[Math.floor(Math.random() * (chestIDs.length - 0 + 1))];
+                    const chestImgUrl = `http://www.clashapi.xyz/images/chests/${chestId}.png`;
                     request.get(`http://api.cr-api.com/player/${option}`)
                         .then(res => {
-                            Utils.chest(res.data, message, Discord);
+                            Utils.chest(res.data, message, chestImgUrl, Discord);
                         })
                         .catch(err => {
                             Utils.errorOption("Bad player ID", message);
@@ -102,5 +104,21 @@ bot.on('message', message => {
         }
     }
 });
+
+/* Init chests id names */
+let chestIDs = [
+    "wooden-chest",
+    "silver-chest",
+    "golden-chest",
+    "crown-chest",
+    "magical-chest",
+    "giant-chest",
+    "super-magical-chest",
+    "epic-chest",
+    "legendary-chest",
+    "lightning-chest",
+    "fortune-chest",
+    "kings-chest"
+];
 
 bot.login(conf.token);
