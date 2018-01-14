@@ -20,7 +20,7 @@ You need to edit `conf.json` file and fill different fields:
 
 - `token` from [Discord API](https://discord.js.org)
 - `apiKey` from [CR-API](http://docs.cr-api.com)
-- `clanTag` from Clash Royale game
+- `clanTag` from [Clash Royale game](https://clashroyale.com)
 
 ## Installation & Run
 
