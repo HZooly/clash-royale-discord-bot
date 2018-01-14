@@ -33,7 +33,8 @@ You need to edit `conf.json` file and fill different fields:
 ## Commands available
 
 - `!hello` say hello to user
-- `!clan` display information of clan
+- `!clan` display informations of clan
+- `!player <ID>` display informations about player _<ID>_
 - `!top` display top 5 players of clan
 - `!top <number>` display top _<number>_ players of clan (from 1 to 25)
 - `!donations` display top 5 donors of clan
