@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const axios = require('axios');
 const conf = require('./conf.json');
+const express = require('express');
+const app = express();
 
 const Utils = require('./utils.js');
 
@@ -136,3 +138,13 @@ let chestIDs = [
 ];
 
 bot.login(conf.token);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+    console.log('Our app is running on http://localhost:' + port);
+});
+
+setInterval(() => {
+ http.get('https://murmuring-citadel-27537.herokuapp.com/');
+}, 900000);

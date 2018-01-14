@@ -1,5 +1,5 @@
 {
-    "token": "YOUR-KEY-FROM-DISCORD-API",
-    "apiKey": "YOUR-API-KEY-FROM-CR-API",
-    "clanTag": "YOUR-CLAN-TAG"
+    "token": "TOKEN-FROM-DISCORD",
+    "apiKey": "API-KEY-FROM-CR-API",
+    "clanTag": "CLAN-TAG"
 }

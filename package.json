@@ -1,24 +1,26 @@
 {
-  "name": "clash-royale-discord-bot",
-  "version": "1.0.0",
-  "description": "A Clash Royale Discord Bot",
-  "main": "bot.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TorzuoliH/clash-royale-discord-bot.git"
-  },
-  "author": "torzuoli.hugo@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TorzuoliH/clash-royale-discord-bot/issues"
-  },
-  "homepage": "https://github.com/TorzuoliH/clash-royale-discord-bot#readme",
-  "dependencies": {
-    "axios": "^0.17.1",
-    "discord.js": "^11.2.1"
+    "name": "clash-royale-discord-bot",
+    "version": "1.0.0",
+    "description": "A Clash Royale Discord Bot",
+    "main": "bot.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node bot.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/TorzuoliH/clash-royale-discord-bot.git"
+    },
+    "author": "torzuoli.hugo@gmail.com",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/TorzuoliH/clash-royale-discord-bot/issues"
+    },
+    "homepage": "https://github.com/TorzuoliH/clash-royale-discord-bot#readme",
+    "dependencies": {
+      "axios": "^0.17.1",
+      "discord.js": "^11.2.1",
+      "express": "^4.16.2"
+    }
   }
-}
+  
