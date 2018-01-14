@@ -32,6 +32,7 @@ You need to edit `conf.json` file and fill different fields:
 
 ## Commands available
 
+- `!help` display help
 - `!hello` say hello to user
 - `!clan` display informations of clan
 - `!player <ID>` display informations about player _ID_
