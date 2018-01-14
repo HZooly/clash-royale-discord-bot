@@ -22,6 +22,8 @@ bot.on('message', message => {
         let args = message.content.substring(1).split(' ');
         let instruction = args[0];
 
+        let option = (args[1] !== undefined) ? args[1] : null;
+
         switch (instruction) {
             case 'hello':
                 Utils.hello(message);
@@ -35,14 +37,28 @@ bot.on('message', message => {
                         console.log(err);
                     });
                 break;
-            case 'top5':
-                request.get(`http://api.cr-api.com/clan/${clanTag}`)
-                    .then(res => {
-                        Utils.top5(res.data.members, message, Discord);
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
+            case 'top':
+                if (option) {
+                    if (option >= 1 && option <= 25) {
+                        request.get(`http://api.cr-api.com/clan/${clanTag}`)
+                            .then(res => {
+                                Utils.top(res.data.members, message, option, Discord);
+                            })
+                            .catch(err => {
+                                console.log(err);
+                            });
+                    } else {
+                        Utils.errorOption("Bad option for top (max 25 players)", message);
+                    }
+                } else {
+                    request.get(`http://api.cr-api.com/clan/${clanTag}`)
+                        .then(res => {
+                            Utils.top(res.data.members, message, 5, Discord);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        });
+                }
                 break;
             case 'donations':
                 request.get(`http://api.cr-api.com/clan/${clanTag}`)

@@ -21,11 +21,11 @@ module.exports = {
         });
     },
 
-    top5: function (data, message, Discord) {
+    top: function (data, message, max, Discord) {
         const embed = new Discord.RichEmbed()
             .setTitle("Top Players")
-            .setDescription("5 High ranked players");
-        for (let i = 0; i < data.length && i < 5; i++) {
+            .setDescription(`${max} High ranked players`);
+        for (let i = 0; i < data.length && i < max; i++) {
             embed.addField(
                 `${i+1}. ${data[i].name}`,
                 `\:trophy: ${data[i].trophies}`
