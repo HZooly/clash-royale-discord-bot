@@ -2,7 +2,7 @@
 
 A Discord Bot that fetch data to (unofficial) [Clash Royale API](https://github.com/cr-api/cr-api).
 
-![img](https://i.imgur.com/0F5Qtc0.png)
+<img src="https://i.imgur.com/0F5Qtc0.png" width="500">
 
 ## Requirements
 
