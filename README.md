@@ -34,9 +34,9 @@ You need to edit `conf.json` file and fill different fields:
 
 - `!hello` say hello to user
 - `!clan` display informations of clan
-- `!player <ID>` display informations about player _<ID>_
+- `!player <ID>` display informations about player _ID_
 - `!top` display top 5 players of clan
-- `!top <number>` display top _<number>_ players of clan (from 1 to 25)
+- `!top <number>` display top _number_ players of clan (from 1 to 25)
 - `!donations` display top 5 donors of clan
 
 ## Todo
