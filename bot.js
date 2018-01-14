@@ -32,23 +32,29 @@ bot.on('message', message => {
                         Utils.clan(res.data, message, Discord);
                     })
                     .catch(err => {
-                        console.log(err)
+                        console.log(err);
                     });
                 break;
             case 'top5':
                 request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         Utils.top5(res.data.members, message, Discord);
+                    })
+                    .catch(err => {
+                        console.log(err);
                     });
                 break;
             case 'donations':
                 request.get(`http://api.cr-api.com/clan/${clanTag}`)
                     .then(res => {
                         Utils.donations(res.data.members, message, Discord);
+                    })
+                    .catch(err => {
+                        console.log(err);
                     });
                 break;
             default:
-                message.channel.send(`You've sent a bad command`);
+                Utils.errorCommand(message);
         }
     }
 });
