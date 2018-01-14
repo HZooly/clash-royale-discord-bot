@@ -69,6 +69,20 @@ bot.on('message', message => {
                         console.log(err);
                     });
                 break;
+            case 'player':
+                if(option){
+                    option = option.replace('#','');
+                    request.get(`http://api.cr-api.com/player/${option}`)
+                        .then(res => {
+                            Utils.player(res.data, message, Discord);
+                        })
+                        .catch(err => {
+                            Utils.errorOption("Bad player ID", message);
+                        })
+                } else {
+                    Utils.errorOption("You need to specify a player ID", message);
+                }
+                break;
             default:
                 Utils.errorCommand(message);
         }

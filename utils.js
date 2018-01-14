@@ -57,11 +57,32 @@ module.exports = {
         })
     },
 
+    player: function (data, message, Discord) {
+        const embed = new Discord.RichEmbed();
+        embed.setTitle("Player Information")
+            .setColor("#22A7F0")
+            .addField("Name", `${data.name} - Level ${data.stats.level}`)
+            .addField("Clan", `${data.clan.name} (${data.clan.role})`)
+            .addField("Max trophies", `${data.stats.maxTrophies} \:trophy:`)
+            .addField("Current trophies", `${data.trophies} \:trophy:`)
+            .addField("Total donations", data.stats.totalDonations)
+            .addField("Cards", `${data.stats.cardsFound}/81`)
+            .addField("Favorite card", data.stats.favoriteCard.name)
+            .addField("W/L/D", `${data.games.winsPercent*100}%/${data.games.lossesPercent*100}%/${data.games.drawsPercent*100}%`)
+            .addField("Challenge max win", data.stats.challengeMaxWins)
+            .addField("Challenge cards won", data.stats.challengeCardsWon)
+            .setThumbnail(data.clan.badge.image);
+
+        return message.channel.send({
+            embed
+        });
+    },
+
     errorCommand: function (message) {
         return message.channel.send(`<@${message.author.id}>: bad command!`);
     },
 
-    errorOption: function(error, message){
-        return message.channel.send(`<@${message.author.id}>: ${error}!`);      
+    errorOption: function (error, message) {
+        return message.channel.send(`<@${message.author.id}>: ${error}!`);
     }
 };
