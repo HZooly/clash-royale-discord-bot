@@ -29,13 +29,24 @@ bot.on('message', message => {
                 Utils.hello(message);
                 break;
             case 'clan':
-                request.get(`http://api.cr-api.com/clan/${clanTag}`)
-                    .then(res => {
-                        Utils.clan(res.data, message, Discord);
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
+                if (option) {
+                    option = Utils.removeHash(option);
+                    request.get(`http://api.cr-api.com/clan/${option}`)
+                        .then(res => {
+                            Utils.clan(res.data, message, Discord);
+                        })
+                        .catch(err => {
+                            Utils.errorOption("Bad clan ID", message);
+                        })
+                } else {
+                    request.get(`http://api.cr-api.com/clan/${clanTag}`)
+                        .then(res => {
+                            Utils.clan(res.data, message, Discord);
+                        })
+                        .catch(err => {
+                            console.log(err);
+                        });
+                }
                 break;
             case 'top':
                 if (option) {

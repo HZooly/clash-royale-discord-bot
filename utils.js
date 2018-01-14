@@ -103,7 +103,7 @@ module.exports = {
             .setDescription('Here the list of available commands')
             .addField("!help", "Display this help list")
             .addField("!hello", "Say hello to user")
-            .addField("!clan", "Display information about clan")
+            .addField("!clan <ID>", "Display information about clan. <ID> is facultative")
             .addField("!player <ID>", "Display informations about player <ID>")
             .addField("!top <max>", "Display top <max> players of clan (from 0 to 25)")
             .addField("!donations", "Display top 5 donors of clan")
