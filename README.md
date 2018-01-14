@@ -38,6 +38,7 @@ You need to edit `conf.json` file and fill different fields:
 - `!top` display top 5 players of clan
 - `!top <number>` display top _number_ players of clan (from 1 to 25)
 - `!donations` display top 5 donors of clan
+- `!chest <ID>` display next coming chest for player _ID_
 
 ## Todo
 
