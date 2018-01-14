@@ -44,6 +44,14 @@ You need to edit `conf.json` file and fill different fields:
 
 **Don't hesitate to fill this part by making a pull request!**
 
+## Thanks
+
+Many thanks to:
+
+- [CR-API](https://github.com/cr-api/cr-api) for Clash Royale API
+- [Martin Carrera](https://github.com/martincarrera/clash-royale-api) for his Clash Royale API
+- [Discord](https://discordapp.com/) for Discord
+
 ## Contributors
 
 - [Hugo Torzuoli](https://github.com/TorzuoliH/)
