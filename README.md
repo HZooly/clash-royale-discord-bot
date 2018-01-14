@@ -29,3 +29,18 @@ You need to edit `conf.json` file and fill different fields:
 - `$ npm install`
 
 - `$ npm start` 
+
+## Commands available
+
+- `!hello` say hello to user
+- `!clan` display information of clan
+- `!top5` display top 5 players of clan
+- `!donations` display top 5 donors of clan
+
+## Todo
+
+**Don't hesitate to fill this part by making a pull request!**
+
+## Contributors
+
+- [Hugo Torzuoli](https://github.com/TorzuoliH/)
