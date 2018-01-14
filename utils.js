@@ -71,6 +71,7 @@ module.exports = {
             .addField("W/L/D", `${data.games.winsPercent*100}%/${data.games.lossesPercent*100}%/${data.games.drawsPercent*100}%`)
             .addField("Challenge max win", data.stats.challengeMaxWins)
             .addField("Challenge cards won", data.stats.challengeCardsWon)
+            .addField("Tournament cards won", data.stats.tournamentCardsWon)
             .setThumbnail(data.clan.badge.image);
 
         return message.channel.send({
