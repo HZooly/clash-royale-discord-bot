@@ -99,6 +99,9 @@ bot.on('message', message => {
                     Utils.errorOption("You need to specify a player ID", message);
                 }
                 break;
+            case 'help':
+                Utils.help(message, Discord);
+                break;
             default:
                 Utils.errorCommand(message);
         }

@@ -96,6 +96,24 @@ module.exports = {
         });
     },
 
+    help: function(message, Discord){
+        const embed = new Discord.RichEmbed();
+        embed.setTitle("Help")
+            .setColor("#FABE58")
+            .setDescription('Here the list of available commands')
+            .addField("!help", "Display this help list")
+            .addField("!hello", "Say hello to user")
+            .addField("!clan", "Display information about clan")
+            .addField("!player <ID>", "Display informations about player <ID>")
+            .addField("!top <max>", "Display top <max> players of clan (from 0 to 25)")
+            .addField("!donations", "Display top 5 donors of clan")
+            .addField("!chest <ID>", "Display next chests incoming for player <ID>")
+
+        return message.channel.send({
+            embed
+        });
+    },
+
     removeHash: function (arg) {
         return arg.replace('#', '');
     },
