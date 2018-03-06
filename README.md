@@ -1,6 +1,6 @@
 # Clash-Royale-Discord-Bot
 
-A Discord Bot that fetch data to (unofficial) [Clash Royale API](https://github.com/cr-api/cr-api).
+A Discord Bot that fetch data to (unofficial) [Royale API](https://github.com/cr-api/cr-api).
 
 <img src="https://i.imgur.com/0F5Qtc0.png" width="500">
 
@@ -19,7 +19,7 @@ A Discord Bot that fetch data to (unofficial) [Clash Royale API](https://github.
 You need to edit `conf.json` file and fill different fields:
 
 - `token` from [Discord API](https://discord.js.org)
-- `apiKey` from [CR-API](http://docs.cr-api.com)
+- `apiKey` from [Royale API](http://docs.cr-api.com)
 - `clanTag` from [Clash Royale game](https://clashroyale.com)
 
 ## Installation & Run
@@ -49,7 +49,7 @@ You need to edit `conf.json` file and fill different fields:
 
 Many thanks to:
 
-- [CR-API](https://github.com/cr-api/cr-api) for Clash Royale API
+- [Royale API](https://github.com/cr-api/cr-api) for Clash Royale API
 - [Martin Carrera](https://github.com/martincarrera/clash-royale-api) for his Clash Royale API
 - [Discord](https://discordapp.com/) for Discord
 
